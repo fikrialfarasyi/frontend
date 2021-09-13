@@ -1,0 +1,42 @@
+<app-dashboard></app-dashboard>
+<div class="container">
+    <h3> Update Transaksi </h3>
+    
+    <form (ngSubmit) = "updateTransaksi()">
+    
+        <table class="table table-striped">
+
+            <tr>
+                <td><label> Barang </label></td>
+                <td>
+                    <select [(ngModel)] = "transaksi.idBarang" name="idBarang" >
+                        <option *ngFor = "let b of barang" [ngValue]="b.id">{{b.namaBarang}}</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label> Jumlah </label></td>
+                <td><input type="number" class="form-control" id="jumlah"
+                    [(ngModel)] = "transaksi.jumlah" name="jumlah"/></td>
+            </tr>
+
+            <tr>
+                <td><label> Tanggal </label></td>
+                <td><input type="date" class="form-control" id="tanggal"
+                    [(ngModel)] = "transaksi.tanggal" name="tanggal"/></td>
+            </tr>
+
+            <tr>
+                <td><label> Keterangan </label></td>
+                <td><input type="text" class="form-control" id="keterangan"
+                    [(ngModel)] = "transaksi.keterangan" name="keterangan"/></td>
+            </tr>
+
+        </table>
+        
+        <a routerLink="/list-supplier" routerLinkActive="active"><button class="btn btn-primary">Kembali</button></a>
+        <button type="submit" class="btn btn-success">Update</button>
+
+    </form>
+</div>

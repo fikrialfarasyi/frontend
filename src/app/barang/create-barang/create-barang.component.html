@@ -1,0 +1,44 @@
+<app-dashboard></app-dashboard>
+
+<div class="container">
+
+    <h3> Create Barang </h3>
+
+    <form (ngSubmit)="saveBarang()">
+
+        <table class="table table-striped">
+
+            <tr>
+                <td><label> Nama Barang  </label></td>
+                <td><input type="text" class="form-control" id="name"
+                    [(ngModel)] = "barang.namaBarang" name="namaBarang"/></td>
+            </tr>
+
+            <tr>
+                <td><label> Harga </label></td>
+                <td><input type="text" class="form-control" id="harga"
+                    [(ngModel)] = "barang.harga" name="harga"/></td>
+            </tr>
+
+            <tr>
+                <td><label> Stok </label></td>
+                <td><input type="text" class="form-control" id="stok"
+                    [(ngModel)] = "barang.stok" name="stok"/></td>
+            </tr>
+
+            <tr>
+                <td><label> Supplier </label></td>
+                <td>
+                    <select [(ngModel)] = "barang.idSupplier" name="idSupplier" >
+                        <option *ngFor = "let s of supplier" [ngValue]="s.id">{{s.namaSupplier}}</option>
+                    </select>
+                </td>
+            </tr>
+
+        </table>
+
+        <a routerLink="/list-barang" ><button class="btn btn-primary">Kembali</button></a>
+        <button type="submit" class="btn btn-success">Tambah</button>
+    </form>
+    
+</div>

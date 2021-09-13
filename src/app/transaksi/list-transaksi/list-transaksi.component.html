@@ -1,0 +1,30 @@
+<app-dashboard></app-dashboard>
+<h2> Master Transaksi </h2>
+<a ><button routerLink="/create-transaksi" class="btn btn-success">Tambah</button></a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Id Barang</th>
+            <th>Id User</th>
+            <th>Tanggal</th>
+            <th>Keterangan</th>
+            <th>Jumlah</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let t of transaksi; let ndx = index">
+            <td> {{ndx + 1}} </td>
+            <td> {{t.idBarang}} </td>
+            <td> {{t.idUser}} </td>
+            <td> {{t.tanggal}} </td>
+            <td> {{t.keterangan}} </td>
+            <td> {{t.jumlah}} </td>
+            <td>
+                <button (click) = "updateTransaksi(t.id)" class="btn btn-info">Update</button>
+                <button (click) = "deleteTransaksi(t.id)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

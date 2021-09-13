@@ -1,0 +1,33 @@
+<app-dashboard></app-dashboard>
+<div class="container">
+    <h3> Create Supplier </h3>
+    
+    <form (ngSubmit) = "saveSupplier()">
+    
+        <table class="table table-striped">
+
+            <tr>
+                <td><label> Nama Supplier</label></td>
+                <td><input type="text" class="form-control" id="namaSupplier"
+                    [(ngModel)] = "supplier.namaSupplier" name="namaSupplier"/></td>
+            </tr>
+
+            <tr>
+                <td><label> No Telp </label></td>
+                <td><input type="text" class="form-control" id="noTelp"
+                    [(ngModel)] = "supplier.noTelp" name="noTelp"/></td>
+            </tr>
+
+            <tr>
+                <td><label> alamat </label></td>
+                <td><input type="text" class="form-control" id="alamat"
+                    [(ngModel)] = "supplier.alamat" name="alamat"/></td>
+            </tr>
+
+        </table>
+        
+        <a routerLink="/list-supplier" routerLinkActive="active"><button class="btn btn-primary">Kembali</button></a>
+        <button type="submit" class="btn btn-success">Tambah</button>
+
+    </form>
+</div>

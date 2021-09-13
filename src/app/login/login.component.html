@@ -1,0 +1,28 @@
+<app-root *ngIf="showLogin"></app-root>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <h2>Axia</h2>
+      </div>
+  
+       <!-- Login Form -->
+        <form (ngSubmit) = "loginUser()">
+            <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email"
+              [(ngModel)]="user.email">
+            <input type="password" id="password" class="fadeIn third" name="password" placeholder="password"
+            [(ngModel)]="user.password">
+            <input type="submit" class="fadeIn fourth" value="Log In">
+        </form>
+  
+      <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" routerLink="/registration">Register</a>
+        </div>
+  
+    </div>
+  </div>
+
+

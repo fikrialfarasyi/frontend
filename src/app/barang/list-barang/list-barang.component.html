@@ -1,0 +1,30 @@
+<app-dashboard></app-dashboard>
+<h2> Master Barang </h2>
+<a ><button routerLink="/create-barang" class="btn btn-success">Tambah</button></a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Name Barang</th>
+            <th>Harga</th>
+            <th>Stok</th>
+            <th>Id Supplier</th>
+            <th>Id User</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let b of barang,  let ndx = index">
+            <td> {{ndx + 1}} </td>
+            <td> {{b.namaBarang}} </td>
+            <td> {{b.harga}} </td>
+            <td> {{b.stok}} </td>
+            <td> {{b.idSupplier}} </td>
+            <td> {{b.idUser}} </td>
+            <td>
+                <button class="btn btn-info">Update</button>
+                <button (click) = "deleteBarang(b.id)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

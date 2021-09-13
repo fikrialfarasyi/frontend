@@ -1,0 +1,26 @@
+<app-dashboard></app-dashboard>
+<h2> Master Supplier </h2>
+<a ><button routerLink="/create-supplier" class="btn btn-success">Tambah</button></a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Name Supplier</th>
+            <th>No Telp</th>
+            <th>Alamat</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let s of supplier; let ndx = index">
+            <td> {{ndx + 1}} </td>
+            <td> {{s.namaSupplier}} </td>
+            <td> {{s.noTelp}} </td>
+            <td> {{s.alamat}} </td>
+            <td>
+                <button (click) = "updateSupplier(s.id)" class="btn btn-info">Update</button>
+                <button (click) = "deleteSupplier(s.id)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
